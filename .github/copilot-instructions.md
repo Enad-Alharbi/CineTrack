@@ -268,7 +268,48 @@
 
 ---
 
-## 7) Environments & Secrets
+## 7) Folder Structure (Guidance)
+
+> Keep the folder hierarchy simple, modular, and aligned with Angular best practices.  
+> Each main page belongs in `/features`, shared logic in `/core`, and reusable UI in `/shared`.
+
+```
+src/
+  app/
+    core/                    # Application-wide logic (services, guards, utils)
+      services/              # API calls, authentication, and local storage handling
+      guards/                # Route guards (e.g., AuthGuard)
+      interceptors/          # Optional HTTP interceptors
+      utils/                 # Utility helpers (formatters, storage utilities)
+      
+    features/                # Main app features (each route = one folder)
+      auth/                  # Login & Register pages
+      home/                  # Home and search functionality
+      details/               # Movie/TV show detail page
+      profile/               # User profile and watched items
+      lists/                 # Custom user-created lists
+
+    shared/                  # Reusable UI elements and components
+      components/            # Common UI blocks (card, grid, language switcher)
+      
+    i18n/                    # Translation files (English, Arabic)
+
+  styles/                    # Global SCSS structure
+
+```
+
+---
+
+### 💡 Notes for Copilot
+- **core/** → for non-UI logic used across the app.  
+- **features/** → each page or route has its own isolated folder.  
+- **shared/** → visual, reusable, and stateless components.  
+- **styles/** → global SCSS system for maintainable design.  
+- **i18n/** → store language files (en/ar).  
+
+---
+
+## 8) Environments & Secrets
 
 - Add placeholders in `environment.ts` and instruct the human to set a TMDB key:
 
@@ -285,7 +326,7 @@
 
 ---
 
-## 8) Definition of Done (per feature)
+## 9) Definition of Done (per feature)
 
 - ✅ Builds without errors.
 - ✅ User flow verified manually (short checklist in Step Report).
@@ -296,7 +337,7 @@
 
 ---
 
-## 9) Communication Prompts (for Copilot Chat)
+## 10) Communication Prompts (for Copilot Chat)
 
 When you need to proceed, use messages like:
 
@@ -311,7 +352,7 @@ When you need to proceed, use messages like:
 
 ---
 
-## 10) Getting Started (Human Checklist)
+## 11) Getting Started (Human Checklist)
 
 1. Run:
    ```bash
