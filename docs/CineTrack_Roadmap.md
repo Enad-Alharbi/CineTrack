@@ -37,16 +37,20 @@ Display detailed info (poster, rating, overview) for each selected movie or show
 
 ## **Phase 3: User Interaction & Lists**
 
-### 3.1 - Mark Movies/Shows as Watched
-Allow users to mark content as watched and store it locally per user. Reflect watched status visually in UI.  
-**Angular Concepts:** LocalStorage CRUD, Event Binding, Conditional Styling  
+### 3.1 - Implement Default Lists System
+Set up the three default lists every user gets automatically:
+- Watchlist: For tracking content to watch
+- Watched: For completed content
+- Favorite: For specially liked content
+Implement the core functionality to add/remove items from these lists.
+**Angular Concepts:** LocalStorage CRUD, Services, BehaviorSubject State Management
 
 ### 3.2 - User Profile Page
 Display watched items and personalized data per user. Enable user-specific state management.  
 **Angular Concepts:** Routing, Services, RxJS Subjects, Data Binding  
 
-### 3.3 - Create Custom Lists (e.g., Marvel, Disney)
-Enable users to create, view, and delete their own lists. Each list can contain multiple movies/shows.  
+### 3.3 - Custom Lists Management
+Enable users to create, view, and delete additional custom lists beyond the default ones (e.g., Marvel, Disney). Each list can contain multiple movies/shows.  
 **Angular Concepts:** Reactive Forms, CRUD Operations, LocalStorage, Component Interaction  
 
 ---

@@ -35,8 +35,11 @@ This project aims to create a **lightweight, user-friendly alternative** for tra
 
 ## 5. Core Features  
 - **User Authentication (Local)** – Register and log in locally using LocalStorage.  
-- **Mark as Watched** – Tag movies and shows as watched; store the state per user.  
-- **Custom Lists** – Create and manage lists (e.g., Marvel Movies, Disney Favorites).  
+- **Default Lists** – Three built-in lists for every user:
+  - Watchlist: For content the user plans to watch
+  - Watched: For content the user has completed watching
+  - Favorite: For content the user particularly enjoyed
+- **Custom Lists** – Create and manage additional custom lists (e.g., Marvel Movies, Disney Favorites).  
 - **Search & Discovery** – Search movies/series using TMDB endpoints.  
 - **Genre Filtering** – Filter content dynamically by genre.  
 - **Profile Page** – Display watched items and personal lists.  
