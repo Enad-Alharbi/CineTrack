@@ -277,21 +277,12 @@
 src/
   app/
     core/                    # Application-wide logic (services, guards, utils)
-      services/              # API calls, authentication, and local storage handling
-      guards/                # Route guards (e.g., AuthGuard)
-      interceptors/          # Optional HTTP interceptors
-      utils/                 # Utility helpers (formatters, storage utilities)
       
     features/                # Main app features (each route = one folder)
-      auth/                  # Login & Register pages
-      home/                  # Home and search functionality
-      details/               # Movie/TV show detail page
-      profile/               # User profile and watched items
-      lists/                 # Custom user-created lists
 
     shared/                  # Reusable UI elements and components
-      components/            # Common UI blocks (card, grid, language switcher)
-      
+      components/            # Common UI blocks 
+
     i18n/                    # Translation files (English, Arabic)
 
   styles/                    # Global SCSS structure
