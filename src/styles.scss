@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+// Core variables (colors, typography, spacing, etc.)
+// Using 'as *' to make variables available globally without namespace
+@use 'styles/variables' as *;
+
+// Reset default browser styles and set base styles
+@use 'styles/reset';
+
+// Layout utilities and common page structures (containers, cards, etc.)
+@use 'styles/layout';
+
+// Form elements styling (inputs, labels, form groups)
+@use 'styles/forms';
+
+// Button components and variants (primary, secondary)
+@use 'styles/buttons';
+
+// Toast notifications and alerts
+@use 'styles/notifications';

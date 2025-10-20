@@ -1,0 +1,98 @@
+<div class="toast-container" *ngIf="showSuccessToast">
+  <div class="toast success">
+    Account created successfully! Redirecting to login...
+  </div>
+</div>
+
+<div class="auth-container">
+  <div class="auth-brand">
+    <div class="auth-logo">
+      <img src="/assets/images/cinetrack-logo.png" alt="CineTrack Logo">
+      <h1>CineTrack</h1>
+    </div>
+    <div class="auth-nav">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register" class="active">Register</a>
+    </div>
+  </div>
+  
+  <div class="auth-card">
+    <div class="auth-header">
+      <h2>Create an account</h2>
+      <p class="auth-subtitle">Join CineTrack to start tracking your movies</p>
+    </div>
+
+    <!-- Registration error message -->
+    <p class="form-error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <!-- Registration form -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Email field -->
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input 
+          id="email"
+          type="email"
+          class="form-input"
+          formControlName="email"
+          placeholder="Enter your email"
+        >
+        <span class="form-error" *ngIf="hasError('email', 'required')">
+          Email is required
+        </span>
+        <span class="form-error" *ngIf="hasError('email', 'email')">
+          Please enter a valid email address
+        </span>
+      </div>
+
+      <!-- Username field -->
+      <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <input 
+          id="username"
+          type="text"
+          class="form-input"
+          formControlName="username"
+          placeholder="Choose a username"
+        >
+        <span class="form-error" *ngIf="hasError('username', 'required')">
+          Username is required
+        </span>
+        <span class="form-error" *ngIf="hasError('username', 'minlength')">
+          Username must be at least 3 characters
+        </span>
+      </div>
+
+      <!-- Password field -->
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input 
+          id="password"
+          type="password"
+          class="form-input"
+          formControlName="password"
+          placeholder="Create a password"
+        >
+        <span class="form-error" *ngIf="hasError('password', 'required')">
+          Password is required
+        </span>
+        <span class="form-error" *ngIf="hasError('password', 'minlength')">
+          Password must be at least 8 characters
+        </span>
+        <span class="form-error" *ngIf="hasError('password', 'pattern')">
+          Password must contain at least one uppercase letter, one lowercase letter, and one number
+        </span>
+      </div>
+
+      <!-- Submit button -->
+      <button 
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="registerForm.invalid"
+      >
+        Create Account
+      </button>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $background-dark;
+  color: $text-light;
+  line-height: 1.5;
+}
+
+input {
+  font-family: inherit;
+  color: inherit;
+}

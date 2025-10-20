@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+// Base form styles
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-md;
+}
+
+.form-label {
+  font-weight: 500;
+  color: $text-light;
+}
+
+.form-input {
+  height: $input-height;
+  padding: $input-padding;
+  background-color: $input-bg;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  color: $text-light;
+  width: 100%;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &.ng-touched.ng-invalid {
+    border-color: $error-color;
+  }
+}
+
+// Validation error message
+.form-error {
+  color: $error-color;
+  font-size: 0.875rem;
+  margin-top: $spacing-xs;
+}
