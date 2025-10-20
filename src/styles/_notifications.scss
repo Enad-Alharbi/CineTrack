@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+.toast-container {
+  position: fixed;
+  top: $spacing-lg;
+  right: $spacing-lg;
+  z-index: 1000;
+}
+
+.toast {
+  padding: $spacing-md $spacing-lg;
+  border-radius: $border-radius-sm;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-normal;
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  max-width: 400px;
+  animation: slideIn 0.3s ease-out;
+  
+  &.success {
+    background-color: rgba($success-color, 0.1);
+    border: 1px solid rgba($success-color, 0.2);
+    color: $success-color;
+  }
+  
+  &.error {
+    background-color: rgba($error-color, 0.1);
+    border: 1px solid rgba($error-color, 0.2);
+    color: $error-color;
+  }
+  
+  &.info {
+    background-color: rgba($info-color, 0.1);
+    border: 1px solid rgba($info-color, 0.2);
+    color: $info-color;
+  }
+  
+  &.warning {
+    background-color: rgba($warning-color, 0.1);
+    border: 1px solid rgba($warning-color, 0.2);
+    color: $warning-color;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

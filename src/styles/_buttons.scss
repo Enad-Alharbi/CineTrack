@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-sm;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  width: 100%;
+  height: $input-height;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: $text-light;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-hover;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $primary-active;
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: $text-light;
+  border: 1px solid $border-color;
+
+  &:hover:not(:disabled) {
+    border-color: $primary-color;
+  }
+}
